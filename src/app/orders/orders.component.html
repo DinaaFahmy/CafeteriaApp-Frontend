@@ -1,0 +1,58 @@
+<form>
+<div class="container" style="margin-left: 25%; margin-top: 3%;">
+<div class="form-row align-items-center" >  
+<div class="row">  
+    <div class="form-group col-md-6">
+     <label for="colFormLabel" class="col-sm-3 col-form-label" style="color: aliceblue; ">Add to user</label>   -->
+    <div class="col-md-6">               
+
+        <select class="form-control" [(ngModel)]="us.Id" name="users">
+            <option *ngFor="let item of u" [value]="item.Id">{{item.UserName}}</option>
+        </select> 
+        <hr width="500px" style="margin-left:-60% ;">
+    </div>    
+    </div>
+</div>
+    <div class="row">  
+    <div class="form-group col-md-6">
+        <!-- <label for="colFormLabel" class="col-sm-3 col-form-label" style="color: aliceblue; ">Products</label>   -->
+       <div class="col-md-6">               
+   
+           <!-- <select class="form-control" [(ngModel)]="pr.ID" name="products">
+               <option *ngFor="let item of p" [value]="item.ID">{{item.ProductName}}</option>
+           </select>                -->
+       </div>    
+       </div>
+    </div>
+<!-- <button class="btn btn-succeed" *ngFor="let item of p" [value]="item.ID" style="display: block; margin:20px">{{item.ProductName}}</button> -->
+<!-- <span *ngFor="let item of p" style="color: aliceblue;">{{item.ItemPrice}} EGP</span> -->
+    </div>
+    </div>
+    <div class="container-fluid align-items-center" style="margin-left:300px;margin-right:200px">
+    <button #b (click)="clickItem($event.target)" *ngFor="let item of p" class="btn btn-success"  [value]="item.ID" style="display: block; margin:10px; font-size:larger; width:250px"><strong>{{item.ProductName}}</strong><br><em>{{item.ItemPrice}} EGP</em></button> 
+    </div>   
+    <div id="itemsList" class="container-fluid align-items-center bg-info" style="margin-top: -88%; margin-left: 800px; margin-right: 200px; border-radius: 5px;">    
+   
+<div>
+   <br>
+
+   <strong style="margin:20px;font-size:larger;">Notes:</strong>  
+   <br>
+   <textarea style="margin:20px; height:100px;width:250px; border-radius: 5px;"></textarea>
+    <hr style="border:1px dashed grey;">
+    <strong style="font-size:larger;margin:20px">Total:</strong> <label style="font-size:larger;"></label>
+<br>
+<button class="btn btn-primary" style="margin:20px 110px; width: 100px;">Confirm</button> 
+</div>
+
+
+    </div>
+    <div class="card" style="width: 18rem;background-color: antiquewhite;">
+        <img class="card-img-top" style="width: 170px; height:100px" src="https://lh3.googleusercontent.com/proxy/VEpiZOiq_O1ZZOdheRLFgRuDpyVsoAgDEMRKgCQx2ljLbZJ6u-QLOj7m5dUm_faNkaBiPcc9mWrqWERKzEN4JGbiFYbwVBGZaE5NlnOJt5CGhQ--iuNpM7rCyAdr0O4" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </form>

@@ -1,0 +1,100 @@
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3 col-xs-offset-3">
+			<div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control text-center" value="1" id="text1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    $(document).on('click', '.number-spinner button', function () {    
+	var btn = $(this),
+		oldValue = btn.closest('.number-spinner').find('#text1').val().trim(),
+		newVal = 0;
+	
+	if (btn.attr('data-dir') == 'up') {
+		newVal = parseInt(oldValue) + 1;
+	} else {
+		if (oldValue > 1) {
+			newVal = parseInt(oldValue) - 1;
+		} else {
+			newVal = 1;
+		}
+	}
+	btn.closest('.number-spinner').find('#text1').val(newVal);
+});
+</script> -->
+<form>
+<h1 style="margin-left: 35%;  margin-top: 4%; color: aliceblue;"><strong>Add Product</strong></h1> <br>
+    <div class="container" style="margin-left: 25%; margin-top: 3%;">
+    <div class="form-row align-items-center" >  
+        <div class="row">  
+        <div class="form-group col-md-6">
+        <label for="colFormLabel" class="col-sm-2 col-form-label" style="color: aliceblue; font-size: medium;">Product</label>   
+        <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="p.ProductName" name="productname">
+        </div>
+        </div>  
+        </div>
+
+    <div class="row">  
+    <div class="form-group col-md-6">
+        <label for="colFormLabel" class="col-sm-2 col-form-label" style="color: aliceblue; font-size: medium;">Price</label>  
+        <div class="col-md-6">
+            <input type="number" class="form-control" value="0.0" data-decimals="3" min="0" max="100" step="0.5" [(ngModel)]="p.ItemPrice" name="price"/> 
+            <!-- <span style="margin:20px">EGP</span> -->
+        </div>
+        </div>
+        </div>
+    <div class="row">  
+    <div class="form-group col-md-6">
+        <label for="colFormLabel" class="col-sm-2 col-form-label" style="color: aliceblue; font-size: medium;">Category</label>  
+        <div class="col-md-6">               
+        <select class="form-control" [(ngModel)]="p.CategoryID" name="category">
+           <option *ngFor="let item of c" [value]="item.CategoryID">{{item.Category}}</option>
+       </select> 
+        <!-- <a style="margin:45px; color: aliceblue;" href="#">Add Category</a>      -->
+        </div>
+        </div>
+        </div>
+        <div class="row">  
+            <div class="form-group col-md-6">
+                <label for="colFormLabel" class="col-sm-2 col-form-label" style="color: aliceblue; font-size: medium;"> Product Image</label>  
+                <div class="col-md-6">
+                    <input type="file" class="form-control" value="0.0" data-decimals="3" min="0" max="100" step="0.5" [(ngModel)]="p.img" name="img"/>                    
+                </div>
+                </div>
+                </div>
+    </div>
+    </div>
+    <div class="container" style="margin-left: 33%; margin-top: 2%;">
+    <div class="row">
+    <div class="col-sm-4">
+    <input type="submit" class="btn btn-success" (click)="add()"> 
+    <div class="col-sm-4">
+    <input type="reset" class="btn btn-primary"></div></div>
+</div></div>
+</form>
+<!-- {{AddProduct.value | json}} -->
+
+
+
+
+
+
+
+       
+        
